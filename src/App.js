@@ -1,25 +1,61 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { memo } from 'react'
+import DataProvider, { Consumer } from './context/DataProvider'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import './App.scss'
 
-function App() {
+
+const App = memo(() => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <DataProvider>
+          {/* <Consumer>
+            {props => {
+              const { cart, setCart } = props
+              return <div>
+                {cart.item}
+                <button onClick={() => setCart({ item: 'test2' })}>click here!</button>
+              </div>
+            }}
+          </Consumer> */}
+
+      <Router>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          {/* <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/dashboard">Dashboard</Link>
+          </li> */}
+        </ul>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          {/* <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/dashboard">
+            <Dashboard />
+          </Route> */}
+        </Switch>
+      </Router>
+    </DataProvider>
+  )
+})
+
+function Home() {
+  return (
+    <div>
+      <h2>Home</h2>
     </div>
   );
 }
 
-export default App;
+export default App
