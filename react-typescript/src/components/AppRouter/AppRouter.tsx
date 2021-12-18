@@ -1,4 +1,3 @@
-// import React from "react";
 // use direct import to include the page in the main bundle
 import Home from "pages/home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
