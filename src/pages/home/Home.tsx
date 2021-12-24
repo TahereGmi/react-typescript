@@ -1,6 +1,12 @@
+import PageLayout from "components/PageLayout";
+// import AddTaskForm from "components/AddTaskForm";
+
 function Home() {
   return (
-    <div>Home Page</div>
+    <PageLayout title="Home">
+      {/* <AddTaskForm className="add-task-form" /> */}
+      Home page detail
+    </PageLayout>
   );
 }
 
