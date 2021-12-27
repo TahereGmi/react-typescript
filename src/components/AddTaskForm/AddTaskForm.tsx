@@ -7,8 +7,8 @@ import useAppActions from 'components/useAppActions';
 export type AddTaskFormProps = Pick<FormProps<AddTaskFormContent>, 'className'>;
 
 function AddTaskForm({ className }: AddTaskFormProps) {
-	const { addTask } = useAppActions();
-    console.log('add task form');
+	// const { addTask } = useAppActions();
+	const addTask = () => console.log('add task!');
 	return (
 		<Form<AddTaskFormContent>
 			title="Add a new Task"

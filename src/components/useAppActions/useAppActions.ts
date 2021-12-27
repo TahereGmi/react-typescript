@@ -1,5 +1,5 @@
 import React from "react";
-import { AppActionsContext } from "../AppProvider";
+import { AppActionsContext } from "../AppProvider/context";
 
 function useAppActions() {
   const context = React.useContext(AppActionsContext);

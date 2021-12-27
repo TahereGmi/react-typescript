@@ -39,7 +39,7 @@ function Form<T extends FieldValues>({
 
 	return (
 		<form onSubmit={handleSubmit(handleSuccessSubmit)}>
-			<h6>{title}</h6>
+			<h4>{title}</h4>
 			<FormProvider<T> {...formProps} handleSubmit={handleSubmit} reset={reset}>
 				{children}
 			</FormProvider>
